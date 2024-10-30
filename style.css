@@ -1,0 +1,78 @@
+/* styles.css */
+
+/* Wave Animation for Emoji */
+@keyframes wave {
+    0% { transform: rotate( 0.0deg); }
+    10% { transform: rotate(14.0deg); }
+    20% { transform: rotate(-8.0deg); }
+    30% { transform: rotate(14.0deg); }
+    40% { transform: rotate(-4.0deg); }
+    50% { transform: rotate(10.0deg); }
+    60% { transform: rotate( 0.0deg); }
+    100% { transform: rotate( 0.0deg); }
+}
+
+.wave {
+    display: inline-block;
+    animation-name: wave;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+}
+
+/* Badge Styling */
+.badge {
+    font-size: 1rem;
+}
+
+/* Adjust list-disc in Bootstrap */
+.list-disc {
+    list-style-type: disc;
+}
+
+/* Responsive Image Adjustments */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Additional custom styles as needed */
+
+/* Hover effects for buttons */
+.btn-link:hover {
+    text-decoration: none;
+}
+
+/* Tooltip styling for copy buttons */
+.tooltip-inner {
+    background-color: #000;
+    color: #fff;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.tooltip.bs-tooltip-auto[data-bs-placement^=top] .tooltip-arrow::before,
+.tooltip.bs-tooltip-auto[data-bs-placement^=right] .tooltip-arrow::before,
+.tooltip.bs-tooltip-auto[data-bs-placement^=bottom] .tooltip-arrow::before,
+.tooltip.bs-tooltip-auto[data-bs-placement^=left] .tooltip-arrow::before {
+    border-color: transparent;
+}
+
+/* Custom scrollbar for better aesthetics */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

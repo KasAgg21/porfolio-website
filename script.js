@@ -141,7 +141,9 @@ async function updateExperience() {
     const experienceContainer = document.querySelector('#experience .container');
     const header = experienceContainer.querySelector('.badge').parentElement.nextElementSibling;
     
-    let experienceHTML = data.map(([company, role, period, logo, responsibilities]) => `
+    let experienceHTML = data.map(row => {
+        const [company, role, period, logo, ...responsibilities] = row;
+        return `
         <div class="card mb-4 shadow-sm">
             <div class="row g-0">
                 <div class="col-md-3 text-center p-3">
@@ -152,13 +154,13 @@ async function updateExperience() {
                         <h5 class="card-title">${role}</h5>
                         <p class="card-text"><strong>${period}</strong></p>
                         <ul>
-                            ${responsibilities.split('|').map(resp => `<li>${resp.trim()}</li>`).join('')}
+                            ${responsibilities.map(resp => `<li>${resp.trim()}</li>`).join('')}
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    `).join('');
+    `}).join('');
 
     // Keep the header and add new experience items
     experienceContainer.innerHTML = '';
